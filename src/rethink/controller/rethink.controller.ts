@@ -2,7 +2,9 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { RethinkService } from '../service/rethink.service';
 import * as rethink from 'rethinkdb';
 import { InsertTestDto } from '../dto/insert-test.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Rethink DB")
 @Controller("rethink")
 export class RethinkController {
   constructor(private rethinkService:RethinkService)
