@@ -27,12 +27,12 @@ export class RethinkService {
 
   async insert(tableName:string,insertTestDto:InsertTestDto):Promise<rethink.WriteResult>
   {
-
-    const result= await rethink.table(tableName)
+    const result= await rethink.
+      db("test")
+      .table(tableName)
       .insert(insertTestDto)
       .run(this.rethinkConnection)
 
     return result
   }
-
 }
